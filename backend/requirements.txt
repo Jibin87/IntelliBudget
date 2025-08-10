@@ -1,0 +1,7 @@
+Flask
+pymongo[srv]
+flask-cors
+flask-bcrypt
+PyJWT
+pgmpy
+pandas

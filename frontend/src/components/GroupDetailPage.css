@@ -1,0 +1,109 @@
+/* --- Group Detail Page - Professional Layout --- */
+.group-detail-layout {
+    display: grid;
+    gap: 2rem;
+    /* On large screens, use a 2/3 and 1/3 column split */
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+        "main sidebar"
+        "danger danger";
+}
+
+/* The main content column on the left */
+.main-content-col {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* The actions sidebar on the right */
+.sidebar-col {
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* General styling for sections within this page */
+.group-section {
+    background: var(--background-white);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+}
+.group-section h3 {
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Settle Up & Members List Styles */
+.settle-up-list, .members-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 0;
+}
+.settle-up-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.85rem 0.25rem;
+    border-bottom: 1px solid var(--border-color);
+}
+.settle-up-list li:last-child { border-bottom: none; }
+.settle-up-list strong { font-size: 1.1em; }
+.members-list li { padding: 0.5rem 0; }
+.invite-form { display: flex; gap: 0.5rem; margin-top: 1rem; }
+
+/* Danger Zone Styles */
+.danger-zone {
+    grid-area: danger;
+    border-color: var(--expense-color) !important;
+}
+.danger-zone h3 { color: var(--expense-color); }
+.danger-zone-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.danger-zone-content p { margin: 0; }
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 1024px) {
+    .group-detail-layout {
+        grid-template-columns: 1fr; /* Stack everything into a single column */
+        grid-template-areas:
+            "main"
+            "sidebar"
+            "danger";
+    }
+}
+
+.sidebar-col .form-group {
+    margin-bottom: 1.25rem;
+}
+
+.sidebar-col .form-input {
+    padding: 0.9rem 1rem; /* Taller input boxes */
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    background-color: var(--background-light); /* Subtle off-white background */
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm); /* Soft inner shadow */
+    transition: all 0.2s ease-in-out;
+}
+
+.sidebar-col .form-input::placeholder {
+    color: #a0aec0; /* Lighter placeholder text */
+}
+
+/* A modern 'glow' effect on focus */
+.sidebar-col .form-input:focus {
+    outline: none;
+    background-color: var(--background-white);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}

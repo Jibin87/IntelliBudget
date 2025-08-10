@@ -1,0 +1,10 @@
+.chart-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 400px; /* Ensures space for the chart to draw */
+  padding: 1rem;
+  background-color: var(--background-light);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+}
